@@ -88,7 +88,7 @@ export default function About() {
           <div className={`bento-card ${styles.card} ${styles.cardStat}`}>
             <div className={styles.cardGlow} style={{ background: 'var(--primary)' }} />
             <p className={styles.statNumber}>
-              <AnimatedCounter target={3} />+
+              <AnimatedCounter target={4} />+
             </p>
             <p className={styles.statLabel}>Years of Experience</p>
           </div>
@@ -106,7 +106,7 @@ export default function About() {
           <div className={`bento-card ${styles.card} ${styles.cardStat}`}>
             <div className={styles.cardGlow} style={{ background: '#f59e0b' }} />
             <p className={styles.statNumber}>
-              <AnimatedCounter target={500} />+
+              <AnimatedCounter target={100} />+
             </p>
             <p className={styles.statLabel}>GitHub Contributions</p>
           </div>
