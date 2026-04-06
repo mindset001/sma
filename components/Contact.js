@@ -15,12 +15,14 @@ export default function Contact() {
 
   useGSAP(() => {
     // Reveal
-    gsap.fromTo(wrapperRef.current, 
+    gsap.fromTo(wrapperRef.current,
       { opacity: 0, scale: 0.8, rotationX: 45 },
-      { opacity: 1, scale: 1, rotationX: 0, duration: 1, ease: "back.out(1.2)", scrollTrigger: {
-        trigger: container.current,
-        start: "top 70%"
-      }}
+      {
+        opacity: 1, scale: 1, rotationX: 0, duration: 1, ease: "back.out(1.2)", scrollTrigger: {
+          trigger: container.current,
+          start: "top 70%"
+        }
+      }
     );
 
     // Magnetic Button Effect
@@ -39,7 +41,7 @@ export default function Contact() {
       const { height, width, left, top } = buttonRef.current.getBoundingClientRect();
       const x = clientX - (left + width / 2);
       const y = clientY - (top + height / 2);
-      xTo(x * 0.4); 
+      xTo(x * 0.4);
       yTo(y * 0.4);
     };
 
@@ -68,13 +70,13 @@ export default function Contact() {
 
       <div className={styles.card} ref={wrapperRef}>
         <Mail size={48} color="var(--primary)" style={{ margin: "0 auto" }} />
-        <a href="mailto:hello@example.com" className={styles.email}>
-          hello@example.com
+        <a href="mailto:smademola01@gmail.com" className={styles.email}>
+          smademola01@gmail.com
         </a>
-        <button 
+        <button
           ref={buttonRef}
           className={styles.button}
-          onClick={() => window.location.href = 'mailto:hello@example.com'}
+          onClick={() => window.location.href = 'mailto:smademola01@gmail.com'}
         >
           Say Hello <Send size={16} />
         </button>

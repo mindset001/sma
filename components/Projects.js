@@ -23,11 +23,11 @@ const projectsData = [
     number: "01",
   },
   {
-    name: "Social Connect App",
+    name: "4orthspace",
     description:
-      "Cross-platform mobile application for connecting developers, featuring real-time chat, post sharing, and push notifications.",
-    tags: ["React Native", "Express", "Socket.io", "PostgreSQL"],
-    live: "#",
+      "Nigeria's most distinguished creative and professional sanctuary. A refined environment where exceptional minds converge, collaborate, and create legacy.",
+    tags: ["Next.js", "Express", "Socket.io", "PostgreSQL"],
+    live: "https://www.4orthspace.com/",
     github: "#",
     accent: "#06b6d4",
     number: "02",

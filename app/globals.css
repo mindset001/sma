@@ -1,40 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Default (Dark Theme) */
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --primary: #8b5cf6;
-  --secondary: #06b6d4;
-  --muted: #94a3b8;
-  --card-bg: rgba(30, 41, 59, 0.5);
-  --border: rgba(255, 255, 255, 0.05);
-  --glass-bg: rgba(15, 23, 42, 0.6);
-  --section-bg: #0b1121;
-  --highlight-gradient: linear-gradient(90deg, #8b5cf6, #06b6d4, #8b5cf6);
-  --button-text: #0f172a;
-  --button-bg: #fff;
-  --button-hover-shadow: rgba(255, 255, 255, 0.2);
-  --skill-icon: #06b6d4;
-  --link-hover: #06b6d4;
+  /* ── Dark Theme (default) ── */
+  --background:          #0e0e10;      /* warm near-black, not cold navy */
+  --foreground:          #f0ede8;      /* warm off-white, not pure white */
+  --primary:             #e8703a;      /* burnt orange — distinctive, human */
+  --secondary:           #7eb8c9;      /* dusty steel-blue, calm accent */
+  --muted:               #8a857e;      /* warm gray, feels aged not digital */
+  --card-bg:             rgba(22, 21, 20, 0.65);
+  --border:              rgba(240, 237, 232, 0.07);
+  --glass-bg:            rgba(14, 14, 16, 0.72);
+  --section-bg:          #111113;
+  --highlight-gradient:  linear-gradient(90deg, #e8703a, #c8a97e, #e8703a);
+  --button-text:         #0e0e10;
+  --button-bg:           #f0ede8;
+  --button-hover-shadow: rgba(232, 112, 58, 0.3);
+  --skill-icon:          #7eb8c9;
+  --link-hover:          #e8703a;
+  --noise-opacity:       0.04;
 }
 
 [data-theme='light'] {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --primary: #8b5cf6;
-  --secondary: #06b6d4;
-  --muted: #475569;
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --border: rgba(0, 0, 0, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --section-bg: #f1f5f9;
-  --highlight-gradient: linear-gradient(90deg, #6d28d9, #0891b2, #6d28d9);
-  --button-text: #fff;
-  --button-bg: #0f172a;
-  --button-hover-shadow: rgba(15, 23, 42, 0.2);
-  --skill-icon: #0891b2;
-  --link-hover: #6d28d9;
+  --background:          #f8f5f0;      /* warm cream, not stark white */
+  --foreground:          #1a1814;
+  --primary:             #c85a20;      /* deeper orange for light mode */
+  --secondary:           #4a8fa3;
+  --muted:               #6b6560;
+  --card-bg:             rgba(255, 252, 247, 0.8);
+  --border:              rgba(26, 24, 20, 0.1);
+  --glass-bg:            rgba(248, 245, 240, 0.8);
+  --section-bg:          #f0ece5;
+  --highlight-gradient:  linear-gradient(90deg, #c85a20, #a07040, #c85a20);
+  --button-text:         #f8f5f0;
+  --button-bg:           #1a1814;
+  --button-hover-shadow: rgba(200, 90, 32, 0.25);
+  --skill-icon:          #4a8fa3;
+  --link-hover:          #c85a20;
+  --noise-opacity:       0.025;
 }
 
 * {
@@ -52,6 +54,21 @@ body {
   color: var(--foreground);
   font-family: 'Outfit', sans-serif;
   scroll-behavior: smooth;
+  position: relative;
+}
+
+/* ── Grain texture overlay — makes it feel handcrafted, not AI ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  opacity: var(--noise-opacity);
+  mix-blend-mode: overlay;
 }
 
 a {
