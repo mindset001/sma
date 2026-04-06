@@ -79,4 +79,9 @@
   .links a {
     display: none;
   }
+
+  .navbar {
+    padding: .5rem 5%;
+
+  }
 }

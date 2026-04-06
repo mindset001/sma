@@ -83,7 +83,7 @@ export default function Contact() {
       </div>
 
       <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} Ademola. Built with Next.js, Framer Motion & GSAP.</p>
+        <p>&copy; {new Date().getFullYear()} S.M. Ademola </p>
       </footer>
     </section>
   );

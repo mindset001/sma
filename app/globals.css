@@ -57,6 +57,13 @@ body {
   position: relative;
 }
 
+/* Restore native cursor on touch/mobile — custom cursor is desktop-only */
+@media (pointer: coarse), (max-width: 768px) {
+  html, body, * {
+    cursor: auto !important;
+  }
+}
+
 /* ── Grain texture overlay — makes it feel handcrafted, not AI ── */
 body::before {
   content: '';
