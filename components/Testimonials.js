@@ -50,11 +50,11 @@ export default function Testimonials() {
         scrollTrigger: { trigger: container.current, start: "top 80%" },
       }
     );
-    gsap.fromTo(".testimonial-card",
+    gsap.fromTo(".testimonial-featured",
       { opacity: 0, y: 60, scale: 0.96 },
       {
-        opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out", stagger: 0.12,
-        scrollTrigger: { trigger: ".testimonial-grid", start: "top 80%" },
+        opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out",
+        scrollTrigger: { trigger: container.current, start: "top 72%" },
       }
     );
   }, { scope: container });
@@ -77,7 +77,7 @@ export default function Testimonials() {
         </div>
 
         {/* Featured large card */}
-        <div className={styles.featured}>
+        <div className={`testimonial-featured ${styles.featured}`}>
           <div className={styles.quoteIcon}>
             <Quote size={28} />
           </div>
@@ -119,37 +119,6 @@ export default function Testimonials() {
               <ChevronRight size={20} />
             </button>
           </div>
-        </div>
-
-        {/* All cards grid */}
-        <div className={`testimonial-grid ${styles.grid}`}>
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className={`testimonial-card ${styles.card} ${i === active ? styles.cardActive : ""}`}
-              onClick={() => setActive(i)}
-              style={{ "--t-accent": t.accent }}
-            >
-              <div className={styles.cardTopRow}>
-                <div
-                  className={styles.cardAvatar}
-                  style={{ background: t.accent + "22", color: t.accent, borderColor: t.accent + "55" }}
-                >
-                  {t.avatar}
-                </div>
-                <div className={styles.cardStars}>
-                  {Array.from({ length: t.rating }).map((_, si) => (
-                    <Star key={si} size={12} fill={t.accent} color={t.accent} />
-                  ))}
-                </div>
-              </div>
-              <p className={styles.cardText}>&ldquo;{t.text.slice(0, 100)}…&rdquo;</p>
-              <div className={styles.cardFooter}>
-                <p className={styles.cardName}>{t.name}</p>
-                <p className={styles.cardRole}>{t.role}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
